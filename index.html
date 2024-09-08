@@ -182,69 +182,8 @@
     <p>Persoon X was ook op het originele feest maar heeft geen uitnodiging gehad, mag X wel komen?: JA! </p>
     <p> Mag ik een +1 meenemen?: JA!</p>
     <p>Gaan we het gezellig hebben: JA!</p>
-    <p>Contact: anagoessens@gmail.com</p>
-  </div>
-  
-  <div class="ghost" style="top: 20%; left: 5%;">👻</div>
-  <div class="ghost" style="top: 40%; right: 5%;">👻</div>
-  <div class="ghost" style="bottom: 10%; left: 10%;">👻</div>
-
-  <!-- Floating Pumpkins -->
-  <div class="pumpkin pumpkin1">🎃</div>
-  <div class="pumpkin pumpkin2">🎃</div>
-  <div class="pumpkin pumpkin3">🎃</div>
-
-   <!-- Floating Scared -->
-   <div class="scared scared2">😱</div>
-   <div class="scared scared3">😱</div>
-
-  
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  const carousel = document.querySelector('.carousel-inner');
-  const items = document.querySelectorAll('.carousel-item');
-  const itemCount = items.length;
-  let currentIndex = 0;
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % itemCount;
-    updateCarousel();
-  }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + itemCount) % itemCount;
-    updateCarousel();
-  }
-
-  function updateCarousel() {
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  document.querySelector('.carousel-control.right').addEventListener('click', showNext);
-  document.querySelector('.carousel-control.left').addEventListener('click', showPrev);
-
-  // Auto-advance the carousel every 5 seconds
-  setInterval(showNext, 3000);
-});
-</script>
-
-</body></html>
-" width="800" height="400">
-      </div>
-    </div>
-    <a href="#" class="carousel-control left">&lt;</a>
-    <a href="#" class="carousel-control right">&gt;</a>
-  </div>
-  
-  <div class="info-section">
-    <h2>FAQ</h2>
-    <p>Moet je je verkleden?: JA! </p>
-    <p>Persoon X was ook op het originele feest maar heeft geen uitnodiging gehad, mag X wel komen?: JA! </p>
-    <p> Mag ik een +1 meenemen?: JA!</p>
-    <p>Gaan we het gezellig hebben: JA!</p>
   </div>
   <a href="mailto:anagoessens@gmail.com">Vragen? Ideeen? Email ons!</a>
-
   
   <div class="ghost" style="top: 20%; left: 5%;">👻</div>
   <div class="ghost" style="top: 40%; right: 5%;">👻</div>
@@ -288,5 +227,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
   setInterval(showNext, 3000);
 });
 </script>
-
-</body></html>
