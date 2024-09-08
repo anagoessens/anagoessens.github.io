@@ -96,6 +96,11 @@
     position: fixed;
     animation: float 3s ease-in-out infinite;
   }
+  .scared {
+    font-size: 30px;
+    position: fixed;
+    animation: float 1s ease-in-out infinite;
+  }
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -106,6 +111,14 @@
     .pumpkin1 { top: 15%; left: 85%; }
     .pumpkin2 { top: 35%; left: 15%; }
     .pumpkin3 { bottom: 10%; left: 30%; }
+
+    /* Scared Positions */
+    .scared1 { top: 5%; left: 40%; }
+    .scared2 { top: 50%; left: 5%; }
+    .scared3 { bottom: 30%; right: 5%; }
+
+
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
@@ -162,8 +175,12 @@
   <div class="pumpkin pumpkin2">🎃</div>
   <div class="pumpkin pumpkin3">🎃</div>
 
+   <!-- Floating Scared -->
+   <div class="scared scared1">😱</div>
+   <div class="scared scared2">😱</div>
+   <div class="scared scared3">😱</div>
 
-
+  
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
   const carousel = document.querySelector('.carousel-inner');
