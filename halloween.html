@@ -1,0 +1,178 @@
+<html><head><base href="">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Het is weer tijd voor Halloween</title>
+<style>
+  body {
+    font-family: 'Creepster', cursive;
+    background-color: #1a1a1a;
+    color: #ff6600;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    background-color: #000;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px #ff00ff;
+  }
+  
+  .carousel {
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    height: 400px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .carousel-control.left { left: 10px; }
+  .carousel-control.right { right: 10px; }
+  
+  .info-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 800px;
+    width: 80%;
+  }
+  
+  h2 {
+    color: #00ff00;
+    text-shadow: 1px 1px 2px #ff00ff;
+  }
+  
+  p {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .ghost {
+    font-size: 30px;
+    position: fixed;
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Het is weer tijd voor Halloween</h1>
+  </header>
+  
+  <div class="info-section">
+    <h2>Party Details</h2>
+    <p>🎃 Datum: To be announced</p>
+    <p>⏰ Tijd: To be announced</p>
+    <p>📍 Locatie: To be announced</p>
+    <p>👻 Wat: Halloween is opgestaan uit de dood. Kom feesten met en val in de prijzen met je meest creatieve kostuum!</p>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="images/hertogjan.jpg" alt="Spooky haunted house at night, fog rolling across the lawn" width="800" height="400">
+      </div>
+      <div class="carousel-item">
+        <img src="images/utrecht.jpg" alt="Carved jack-o'-lanterns glowing in the dark" width="800" height="400">
+      </div>
+      <div class="carousel-item">
+        <img src="images/yipyip.jpg" alt="Group of people in various Halloween costumes dancing" width="800" height="400">
+      </div>
+      <div class="carousel-item">
+        <img src="images/ghost.jpg" alt="Group of people in various Halloween costumes dancing" width="800" height="400">
+      </div>
+      <div class="carousel-item">
+        <img src="images/art.jpg" alt="Group of people in various Halloween costumes dancing" width="800" height="400">
+      </div>
+      <div class="carousel-item">
+        <img src="images/zombie.jpg" alt="Group of people in various Halloween costumes dancing" width="800" height="400">
+      </div>
+    </div>
+    <a href="#" class="carousel-control left">&lt;</a>
+    <a href="#" class="carousel-control right">&gt;</a>
+  </div>
+  
+  <div class="info-section">
+    <h2>FAQ</h2>
+    <p>Moet je je verkleden: ja! Mag ik een +1 meenemen: ja! Gaan we het gezellig hebben: ja! </p>
+    <p>Contact: anagoessens@gmail.com</p>
+  </div>
+  
+  <div class="ghost" style="top: 20%; left: 5%;">👻</div>
+  <div class="ghost" style="top: 40%; right: 5%;">👻</div>
+  <div class="ghost" style="bottom: 10%; left: 10%;">👻</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const carousel = document.querySelector('.carousel-inner');
+  const items = document.querySelectorAll('.carousel-item');
+  const itemCount = items.length;
+  let currentIndex = 0;
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % itemCount;
+    updateCarousel();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  document.querySelector('.carousel-control.right').addEventListener('click', showNext);
+  document.querySelector('.carousel-control.left').addEventListener('click', showPrev);
+
+  // Auto-advance the carousel every 5 seconds
+  setInterval(showNext, 5000);
+});
+</script>
+
+</body></html>
