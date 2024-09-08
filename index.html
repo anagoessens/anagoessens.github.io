@@ -85,7 +85,7 @@
     line-height: 1.6;
   }
   
-  .ghost {
+  .ghost, .pumpkin {
     font-size: 30px;
     position: fixed;
     animation: float 5s ease-in-out infinite;
@@ -95,6 +95,11 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
+
+    /* Pumpkins Positions */
+    .pumpkin1 { top: 15%; left: 85%; }
+    .pumpkin2 { top: 35%; right: 10%; }
+    .pumpkin3 { bottom: 20%; left: 30%; }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
@@ -145,6 +150,13 @@
   <div class="ghost" style="top: 20%; left: 5%;">👻</div>
   <div class="ghost" style="top: 40%; right: 5%;">👻</div>
   <div class="ghost" style="bottom: 10%; left: 10%;">👻</div>
+
+  <!-- Floating Pumpkins -->
+  <div class="pumpkin pumpkin1">🎃</div>
+  <div class="pumpkin pumpkin2">🎃</div>
+  <div class="pumpkin pumpkin3">🎃</div>
+
+
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
