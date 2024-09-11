@@ -85,7 +85,7 @@ body {
   }
   
   .ghost {
-    font-size: 40px;
+    font-size: 30px;
     position: fixed;
     animation: float 5s ease-in-out infinite;
   }
