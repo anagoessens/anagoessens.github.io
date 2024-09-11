@@ -85,18 +85,18 @@ body {
   }
   
   .ghost {
-    font-size: 50px;
+    font-size: 40px;
     position: fixed;
     animation: float 5s ease-in-out infinite;
   }
 
   .pumpkin {
-    font-size: 40px;
+    font-size: 30px;
     position: fixed;
     animation: float 3s ease-in-out infinite;
   }
   .scared {
-    font-size: 40px;
+    font-size: 30px;
     position: fixed;
     animation: float 1s ease-in-out infinite;
   }
