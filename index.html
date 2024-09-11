@@ -2,127 +2,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Het is weer tijd voor Halloween</title>
-<style>
-  body {
-    font-family: 'Creepster', cursive;
-    background-color: #1a1a1a;
-    color: #ff6600;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  header {
-    background-color: #000;
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 4em;
-    margin: 0;
-    text-shadow: 2px 2px 4px #ff00ff;
-  }
+  <link rel="stylesheet" href="styles.css">
 
-  a {
-    color: yellow;
-  }
-  
-  .carousel {
-    width: 80%;
-    max-width: 800px;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    margin: 20px 0;
-  }
-  
-  .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-  
-  .carousel-item {
-    min-width: 100%;
-    height: 400px;
-  }
-  
-  .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .carousel-control.left { left: 10px; }
-  .carousel-control.right { right: 10px; }
-  
-  .info-section {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    max-width: 800px;
-    width: 80%;
-  }
-  
-  h2 {
-    color: #00ff00;
-    text-shadow: 1px 1px 2px #ff00ff;
-  }
-  
-  p {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-  }
-  
-  .ghost {
-    font-size: 30px;
-    position: fixed;
-    animation: float 5s ease-in-out infinite;
-  }
-
-  .pumpkin {
-    font-size: 30px;
-    position: fixed;
-    animation: float 3s ease-in-out infinite;
-  }
-  .scared {
-    font-size: 30px;
-    position: fixed;
-    animation: float 1s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-
-    /* Pumpkins Positions */
-    .pumpkin1 { top: 15%; left: 85%; }
-    .pumpkin2 { top: 35%; left: 15%; }
-    .pumpkin3 { bottom: 10%; left: 30%; }
-
-    /* Scared Positions */
-    .scared2 { top: 50%; left: 5%; }
-    .scared3 { bottom: 30%; right: 5%; }
-
-
-
-</style>
 <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -179,12 +60,57 @@
     <a href="#" class="carousel-control right">&gt;</a>
   </div>
   
+  <div class="contact-form-section">
+    <h2>RSVP (Reserveer Spooky Verkleed Partijtje)</h2>
+    <form class="spooky-form " method="POST" id="form">
+
+      <input type="hidden" name="access_key" value="8fdff251-5f8a-4889-b89e-0a979d26214b">
+  
+      <label for="naam">Wat is jouw naam?</label>
+      <input type="text" placeholder="Skelet Pompoenhoofd" id="naam" name="Naam" required>
+      
+      <label for="hoeveel">Hoeveel engerds meldt jij aan?</label>
+      <select id="hoeveel" name="Hoeveel" required>
+        <option value="1">Ik been zo alleen (1)</option>
+        <option value="2">Ik neem een slachtoffer mee (2)</option>
+        <option value="3">Ik kom met een enge kinder tweeling (3)</option>
+        <option value="4">Ik breng een spookfamilie mee (4)</option>
+        <option value="5+">Het is eng hoeveel vrienden ik heb (5+)</option>
+      </select>
+      
+      <label for="email" >Ik wil spooky updates ontvangen over dit evenement</label>
+      <input type="email"placeholder="boe@schrik.eng" id="email" name="email">
+      
+      <label for="message">Laat een eng bericht achter..</label>
+      <textarea id="message" name="message" placeholder="Er was eens een meisje.. die altijd al naar een verkleedfeest wilde en ze vonden alleen haar linkerarm terug..."></textarea>
+      
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+  
+      <button type="submit">Stuur dit bericht, als je durft...</button>
+      <div id="result-fail" style="display: none";>
+        OOeeeehhhh er ging iets verkeerd... Heeel eng.. heeeel spooky..... 
+        </div>
+      <div id="result-success" style="display: none";>
+        <h3>Je bericht is succesvol verstuurd</h3>
+      <video autoplay loop muted playsinline>
+        <source src="/gifs/spooky-success.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      </div>
+  
+  </form>
+  
   <div class="info-section">
     <h2>FAQ</h2>
     <p>Moet je je verkleden?: JA! </p>
     <p>Persoon X was ook op het originele feest maar heeft geen uitnodiging gehad, mag X wel komen?: JA! </p>
     <p> Mag ik een +1 meenemen?: JA!</p>
     <p>Gaan we het gezellig hebben: JA!</p>
+  </div>
+
+  <script>
+  
+  </script>
   </div>
   <a href="mailto:anagoessens@gmail.com">Vragen? Ideeen? Email ons!</a>
 
@@ -202,31 +128,8 @@
    <div class="scared scared3">😱</div>
 
   
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  const carousel = document.querySelector('.carousel-inner');
-  const items = document.querySelectorAll('.carousel-item');
-  const itemCount = items.length;
-  let currentIndex = 0;
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % itemCount;
-    updateCarousel();
-  }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + itemCount) % itemCount;
-    updateCarousel();
-  }
-
-  function updateCarousel() {
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  document.querySelector('.carousel-control.right').addEventListener('click', showNext);
-  document.querySelector('.carousel-control.left').addEventListener('click', showPrev);
-
-  // Auto-advance the carousel every 5 seconds
-  setInterval(showNext, 3000);
-});
-</script>
+</body>
+<footer>
+<script src="index.js"></script>
+</footer>
+</html>
