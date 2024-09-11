@@ -212,6 +212,9 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+.spooky-form video {
+  max-width: 100%;
+}
 @media (max-width: 600px) {
   .contact-form-section {
     width: 90%;
