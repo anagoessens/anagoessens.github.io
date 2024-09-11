@@ -110,6 +110,7 @@ body {
     .pumpkin1 { top: 15%; left: 85%; }
     .pumpkin2 { top: 35%; left: 15%; }
     .pumpkin3 { bottom: 10%; left: 30%; }
+    .pumpkin3 { bottom: 10%; left: 80%; }
 
     /* Scared Positions */
     .scared2 { top: 50%; left: 5%; }
