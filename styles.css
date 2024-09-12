@@ -4,9 +4,8 @@ body {
   color: #ff6600;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 100vw;
+  position: relative;
 }
 
 header {
@@ -40,6 +39,10 @@ a {
   transition: transform 0.5s ease;
 }
 
+main {
+  display: grid;
+  justify-items: center;
+}
 .carousel-item {
   min-width: 100%;
   height: 400px;
@@ -88,6 +91,10 @@ p {
   line-height: 1.6;
 }
 
+.emoji {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
 .ghost {
   font-size: 30px;
   position: fixed;
@@ -284,19 +291,75 @@ p {
   --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-body:has(.switch__input:checked) {
-  
+body:has(.switch__input:checked) .emoji {
+  opacity: 1;
 }
+
+body:has(.switch__input:checked):before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: flash 7s infinite;
+  animation-delay: 2s;
+  opacity:0;
+}
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  93% {
+    opacity: 0.6;
+  }
+  94% {
+    opacity: 0.2;
+  }
+  96% {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .spook-switch {
-  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px 24px;
+  position: sticky;
+  top: 0;
+  right: 0;
 }
+
+@media (min-width: 1024px) {
+  .spook-switch {
+    max-width: 800px;
+    margin: auto;
+
+  }
+}
+.input-title {
+  font-size: 27px;
+}
+.input-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .switch,
 .switch__input {
   display: block;
   -webkit-tap-highlight-color: transparent;
 }
 .switch {
-  margin: auto;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
