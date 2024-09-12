@@ -6,6 +6,7 @@ body {
   padding: 0;
   max-width: 100vw;
   position: relative;
+ 
 }
 
 header {
@@ -92,63 +93,41 @@ p {
 }
 
 .emoji {
+  position: fixed;
+  font-size: 32px;
   transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-.ghost {
-  font-size: 30px;
-  position: fixed;
-  animation: float 5s ease-in-out infinite;
+  opacity:0;
 }
 
-.pumpkin {
-  font-size: 30px;
-  position: fixed;
-  animation: float 3s ease-in-out infinite;
-}
-.scared {
-  font-size: 30px;
-  position: fixed;
-  animation: float 1s ease-in-out infinite;
+.path-1 {
+  offset-path: path("M20,20 C20,100 200,0 200,100 S400,200 400,100 S600,0 600,100 S800,200 800,100 S1000,0 1000,100 S1200,200 1200,100 S1400,0 1400,100 S1600,200 1600,100 S1800,0 1800,100 S2000,200 2000,100");
+  animation: float1 13s linear infinite;
 }
 
-@keyframes float {
-  0%,
+.path-2 {
+  offset-path: path("M20,20 C20,100 200,0 200,100 S400,200 400,100 S600,0 600,100 S800,200 800,100 S1000,0 1000,100 S1200,200 1200,100 S1400,0 1400,100 S1600,200 1600,100 S1800,0 1800,100 S2000,200 2000,100 L2000,300 L1800,300 L1600,400 L1400,300 L1200,400 L1000,300 L800,400 L600,300 L400,400 L200,300 L20,300 Z");
+  animation: float1 24s linear infinite;
+}
+
+.path-3 {
+  offset-path: path("M0,30 C0,110 -170,10 -170,110 S-390,210 -390,110 S-590,10 -590,110 S-790,210 -790,110 S-990,10 -990,110 S-1190,210 -1190,110 S-1390,10 -1390,110 S-1590,210 -1590,110 S-1790,10 -1790,110 S-1990,210 -1990,110 L-1990,310 L-1790,310 L-1590,410 L-1390,310 L-1190,410 L-990,310 L-790,410 L-590,310 L-390,410 L-190,310 L0,310 Z");
+  animation: float1 20s linear infinite;
+
+}
+.path-4 {
+  offset-path: path("M0,20 C0,100 -180,0 -180,100 S-400,200 -400,100 S-600,0 -600,100 S-800,200 -800,100 S-1000,0 -1000,100 S-1200,200 -1200,100 S-1400,0 -1400,100 S-1600,200 -1600,100 S-1800,0 -1800,100 S-2000,200 -2000,100 L-2000,300 L-1800,300 L-1600,400 L-1400,300 L-1200,400 L-1000,300 L-800,400 L-600,300 L-400,400 L-200,300 L0,300 Z");
+  animation: float1 25s linear infinite;
+}
+
+@keyframes float1 {
+  0% {
+    offset-distance: 0%;
+  }
   100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
+    offset-distance: 100%;
   }
 }
 
-/* Pumpkins Positions */
-.pumpkin1 {
-  top: 15%;
-  left: 85%;
-}
-.pumpkin2 {
-  top: 35%;
-  left: 15%;
-}
-.pumpkin3 {
-  bottom: 10%;
-  left: 30%;
-}
-.pumpkin4 {
-  bottom: 10%;
-  left: 80%;
-}
-
-/* Scared Positions */
-.scared2 {
-  top: 50%;
-  left: 5%;
-}
-.scared3 {
-  bottom: 30%;
-  right: 5%;
-}
 
 .contact-form-section {
   width: 80%;
@@ -290,7 +269,11 @@ p {
   --trans-dur: 0.6s;
   --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
 }
-
+body:has(.switch__input:checked) {
+  background-image: url(/gifs//patterntje.svg);
+  background-repeat: repeat;
+  background-size: 250px;
+}
 body:has(.switch__input:checked) .emoji {
   opacity: 1;
 }
@@ -304,8 +287,7 @@ body:has(.switch__input:checked):before {
   height: 100%;
   background: white;
   animation: flash 7s infinite;
-  animation-delay: 2s;
-  opacity:0;
+  opacity: 0;
 }
 @keyframes flash {
   from {
@@ -344,7 +326,6 @@ body:has(.switch__input:checked):before {
   .spook-switch {
     max-width: 800px;
     margin: auto;
-
   }
 }
 .input-title {
@@ -424,7 +405,7 @@ body:has(.switch__input:checked):before {
     /* 1px * 2 */ 0 4px 16px hsla(var(--hue), 10%, 10%, 0.1); /* 2px * 2, 8px * 2 */
   outline: transparent;
   width: 88px; /* 44px * 2 */
-  height: 48px; /* 24px * 2 */
+  height: 43px; /* 24px * 2 */
   -webkit-appearance: none;
   appearance: none;
   transition: background-color var(--trans-dur), box-shadow var(--trans-dur);
