@@ -287,7 +287,6 @@ body:has(.switch__input:checked):before {
   height: 100%;
   background: white;
   animation: flash 7s infinite;
-  animation-delay: 2s;
   opacity: 0;
 }
 @keyframes flash {
