@@ -44,10 +44,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     registerForm(form);
   }
 
-  document.getElementById('spook-mode-toggle').addEventListener('change', () => {
-    document.body.classList.toggle('spook-mode', event.target.checked);
-
-  });
 });
 
 
